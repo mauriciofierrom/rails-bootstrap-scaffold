@@ -1,0 +1,17 @@
+
+<p id="notice"><%%= notice %></p>
+
+<dl class="dl-horizontal">
+<% attributes.each do |attribute| -%>
+<dt>
+  <%= attribute.human_name %>:
+</dt>
+<dd>
+  <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
+</dd>
+
+<% end -%>
+</dl>
+
+<%%= link_to '<i class="icon-pencil icon-white"></i> Editar'.html_safe, edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), :class => "btn btn-primary" %> |
+<%%= link_to '<i class="icon-arrow-left icon-white"></i> Regresar'.html_safe, <%= index_helper %>_path, :class => "btn btn-inverse" %>
